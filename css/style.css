@@ -1,3 +1,33 @@
 * {
   box-sizing: border-box;
 }
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.modal-enter {
+  animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modal-exit {
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}

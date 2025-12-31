@@ -28,11 +28,9 @@ function toggleSidebar() {
       logo.classList.add("hidden");
       sidebarTexts.forEach((text) => text.classList.add("hidden"));
       sidebarSubmenus.forEach((submenu) => submenu.classList.add("hidden"));
-      if (activeSubMenuId) {
-        sidebarSubmenuIcons.forEach((icon) => {
-          icon.classList.remove("rotate-90");
-        });
-      }
+      sidebarSubmenuIcons.forEach((icon) => {
+        icon.classList.remove("rotate-90");
+      });
     } else {
       //expand sidebar
       sidebar.classList.remove("w-20");
