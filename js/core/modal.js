@@ -97,28 +97,21 @@ function removeImage(event) {
 
   if (!previewSectionId) return;
 
-  // Remove the image from uploadedImages for this section
   const sectionImages = uploadedImages.filter(
     (img) => img.previewSectionId === previewSectionId
   );
   const imageToRemove = sectionImages[index];
 
   if (imageToRemove) {
-    // Remove from global uploadedImages array
     const globalIndex = uploadedImages.indexOf(imageToRemove);
     if (globalIndex > -1) uploadedImages.splice(globalIndex, 1);
-
-    // Remove from DOM
     previewContainer.children[index].remove();
-
-    // Reassign indices for remaining buttons in this section
     Array.from(previewContainer.children).forEach((child, i) => {
       const btn = child.querySelector(".remove-uploaded-image");
       if (btn) btn.setAttribute("data-index", i);
     });
   }
 
-  // Hide preview section if no images left in this section
   const remainingSectionImages = uploadedImages.filter(
     (img) => img.previewSectionId === previewSectionId
   );

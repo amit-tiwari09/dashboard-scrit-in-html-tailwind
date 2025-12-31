@@ -27,7 +27,8 @@
 
       <button class="toggle-sidebar p-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors mr-4">
         <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+          </path>
         </svg>
       </button>
     </div>
@@ -51,7 +52,7 @@
 
       <!--========== Home ===========-->
       <div>
-        <a href="index.html"
+        <a href="/index.html"
           class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-[#EEF2FF] transition-colors">
           <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -80,7 +81,7 @@
             <span class="sidebar-text pointer-events-none">Doctors</span>
           </div>
           <svg id="doctors-icon"
-            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-submenu-icon pointer-events-none"
+            class=" sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-text pointer-events-none"
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
             </path>
@@ -117,7 +118,7 @@
 
       <!--========== Events ===========-->
       <div>
-        <a href="pages/event.html" data-nav
+        <a href="/pages/event.html" data-nav
           class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-[#EEF2FF] transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round"
@@ -148,7 +149,7 @@
             <span class="sidebar-text pointer-events-none">Patients</span>
           </div>
           <svg id="patients-icon"
-            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-submenu-icon pointer-events-none"
+            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-text pointer-events-none"
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
@@ -184,26 +185,26 @@
             <span class="sidebar-text pointer-events-none">Report</span>
           </div>
           <svg id="report-icon"
-            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-submenu-icon pointer-events-none"
+            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-text pointer-events-none"
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
 
         <div id="report-submenu" class="hidden mt-1 ml-11 space-y-1 sidebar-submenu">
-          <a href="/pages/reports/patient-report.html"
+          <a href="/pages/reports/patient-report.html" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             Patients Report
           </a>
-          <a href="#"
+          <a href="#" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             Blood Test
           </a>
-          <a href="#"
+          <a href="#" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             X-ray
           </a>
-          <a href="#"
+          <a href="#" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             Full Health
           </a>
@@ -225,18 +226,18 @@
             <span class="sidebar-text pointer-events-none">Setting</span>
           </div>
           <svg id="setting-icon"
-            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-submenu-icon pointer-events-none"
+            class="sidebar-submenu-icon w-4 h-4 transition-transform duration-200 sidebar-text pointer-events-none"
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
 
         <div id="setting-submenu" class="hidden mt-1 ml-11 space-y-1 sidebar-submenu">
-          <a href="#"
+          <a href="/pages/settings/app-menu.html" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             App Menu
           </a>
-          <a href="#"
+          <a href="/pages/settings/slider.html" data-nav
             class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
             Slider
           </a>
@@ -255,12 +256,14 @@
           class="w-4 h-4 flex-shrink-0 text-gray-600 group-hover:text-red-500 transition-colors duration-200 pointer-events-none"
           fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+          </path>
         </svg>
         <span class="sidebar-text">Logout</span>
       </button>
     </form>
   </aside>
+
 
   <!-- ====================== Main Content Area -with header ===================== -->
   <div class="flex-1 flex flex-col h-screen overflow-hidden w-full">
@@ -375,7 +378,7 @@
     </header>
 
     <!--================= Main content=== ===============-->
-    <main class="flex-1 overflow-y-auto bg-blue-500 p-4 md:p-8 bg-gray-50">
+    <main class="flex-1 overflow-y-auto bg-blue-500 p-3 bg-gray-50">
 
       <!--============= Summary Cards ==============-->
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -1042,6 +1045,28 @@
       </div>
 
     </main>
+  </div>
+
+
+  <div id="loader" class="loader fixed inset-0 z-50 flex items-center justify-center bg-white/60">
+    <div class="relative flex flex-col items-center gap-8">
+
+      <!--=== Animated Dots ===-->
+      <div class="flex flex-col items-center gap-3">
+        <div class="flex gap-2">
+          <span class="h-2 w-2 rounded-full bg-indigo-600 animate-bounce" style="animation-delay: 0ms;"></span>
+          <span class="h-2 w-2 rounded-full bg-indigo-600 animate-bounce" style="animation-delay: 150ms;"></span>
+          <span class="h-2 w-2 rounded-full bg-indigo-600 animate-bounce" style="animation-delay: 300ms;"></span>
+        </div>
+      </div>
+
+      <!--===== Progress Bar ====-->
+      <div class="w-64 h-1 bg-gray-200 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-indigo-600 to-indigo-400"
+          style="animation: slide-in-right 1.5s ease-in-out infinite;"></div>
+      </div>
+
+    </div>
   </div>
 
   <script type="module" src="/js/script.js"></script>

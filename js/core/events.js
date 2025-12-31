@@ -4,7 +4,7 @@ import {
   openModal,
   removeImage,
 } from "./modal.js";
-import { handleMenuClick, toggleSidebar } from "./sidebar.js";
+import { handleMenuClick, markActiveMenu, toggleSidebar } from "./sidebar.js";
 
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("toggle-sidebar")) {
@@ -27,6 +27,8 @@ document.addEventListener("click", function (event) {
     removeImage(event);
   }
 });
+
+markActiveMenu();
 
 // document.addEventListener("change", function (event) {
 //   if (event.target.classList.contains("image-upload-preview")) {

@@ -2,6 +2,40 @@
   box-sizing: border-box;
 }
 
+  @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin-reverse {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    @keyframes slide-in-right {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
