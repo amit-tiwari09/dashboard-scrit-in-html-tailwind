@@ -1,10 +1,12 @@
-import {
-  closeModal,
-  handleImageUpload,
-  openModal,
-  removeImage,
-} from "./modal.js";
+import { closeModal, openModal } from "./modal.js";
 import { handleMenuClick, markActiveMenu, toggleSidebar } from "./sidebar.js";
+
+window.addEventListener("load", function () {
+  let preloader = document.getElementById("loader");
+  if (preloader) {
+    preloader.classList.add("hidden");
+  }
+});
 
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("toggle-sidebar")) {
@@ -23,9 +25,9 @@ document.addEventListener("click", function (event) {
     closeModal(event.target.getAttribute("data-targetModalId"));
   }
 
-  if (event.target.classList.contains("remove-uploaded-image")) {
-    removeImage(event);
-  }
+  // if (event.target.classList.contains("remove-uploaded-image")) {
+  //   removeImage(event);
+  // }
 });
 
 markActiveMenu();

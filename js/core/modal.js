@@ -17,59 +17,59 @@ function closeModal(modalBtnId) {
   }, 500);
 }
 
-function handleImageUpload(event) {
-  const input = event.target;
+// function handleImageUpload(event) {
+//   const input = event.target;
 
-  const previewSectionId = input.getAttribute("data-previewSectionId");
-  if (!previewSectionId) return;
+//   const previewSectionId = input.getAttribute("data-previewSectionId");
+//   if (!previewSectionId) return;
 
-  const files = Array.from(input.files);
-  const previewSection = document.querySelector(`#${previewSectionId}`);
-  const previewContainer = previewSection.querySelector("#imagePreview");
+//   const files = Array.from(input.files);
+//   const previewSection = document.querySelector(`#${previewSectionId}`);
+//   const previewContainer = previewSection.querySelector("#imagePreview");
 
-  // If multiple uploads are not allowed, clear existing images
-  if (!input.hasAttribute("multiple")) {
-    uploadedImages = uploadedImages.filter(
-      (img) => img.previewSectionId !== previewSectionId
-    );
-    previewContainer.innerHTML = "";
-  }
+//   // If multiple uploads are not allowed, clear existing images
+//   if (!input.hasAttribute("multiple")) {
+//     uploadedImages = uploadedImages.filter(
+//       (img) => img.previewSectionId !== previewSectionId
+//     );
+//     previewContainer.innerHTML = "";
+//   }
 
-  files.forEach((file) => {
-    if (file.type.startsWith("image/")) {
-      const reader = new FileReader();
+//   files.forEach((file) => {
+//     if (file.type.startsWith("image/")) {
+//       const reader = new FileReader();
 
-      reader.onload = function (e) {
-        uploadedImages.push({
-          name: file.name,
-          data: e.target.result,
-          size: file.size,
-        });
+//       reader.onload = function (e) {
+//         uploadedImages.push({
+//           name: file.name,
+//           data: e.target.result,
+//           size: file.size,
+//         });
 
-        const imageWrapper = document.createElement("div");
-        imageWrapper.className = "relative group";
+//         const imageWrapper = document.createElement("div");
+//         imageWrapper.className = "relative group";
 
-        imageWrapper.innerHTML = `
-                            <img src="${
-                              e.target.result
-                            }" class="w-full h-24 object-cover rounded-lg border-2 border-gray-100" alt="Preview">
-                            <button type="button" data-previewSectionId="${previewSectionId}" data-index="${
-          uploadedImages.length - 1
-        }"
-                                class="remove-uploaded-image absolute top-1 right-1 w-6 h-6 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-xs font-bold hover:bg-red-600"
-                            >
-                                ×
-                            </button>
-                        `;
+//         imageWrapper.innerHTML = `
+//                             <img src="${
+//                               e.target.result
+//                             }" class="w-full h-24 object-cover rounded-lg border-2 border-gray-100" alt="Preview">
+//                             <button type="button" data-previewSectionId="${previewSectionId}" data-index="${
+//           uploadedImages.length - 1
+//         }"
+//                                 class="remove-uploaded-image absolute top-1 right-1 w-6 h-6 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-xs font-bold hover:bg-red-600"
+//                             >
+//                                 ×
+//                             </button>
+//                         `;
 
-        previewContainer.appendChild(imageWrapper);
-        previewSection.classList.remove("hidden");
-      };
+//         previewContainer.appendChild(imageWrapper);
+//         previewSection.classList.remove("hidden");
+//       };
 
-      reader.readAsDataURL(file);
-    }
-  });
-}
+//       reader.readAsDataURL(file);
+//     }
+//   });
+// }
 
 // function removeImage(event) {
 //   const previewSectionId = event.target.getAttribute("data-previewSectionId");
@@ -88,36 +88,36 @@ function handleImageUpload(event) {
 //   }
 // }
 
-function removeImage(event) {
-  const button = event.target;
-  const previewSectionId = button.getAttribute("data-previewSectionId");
-  const index = Number(button.getAttribute("data-index"));
-  const previewSection = document.querySelector(`#${previewSectionId}`);
-  const previewContainer = previewSection.querySelector("#imagePreview");
+// function removeImage(event) {
+//   const button = event.target;
+//   const previewSectionId = button.getAttribute("data-previewSectionId");
+//   const index = Number(button.getAttribute("data-index"));
+//   const previewSection = document.querySelector(`#${previewSectionId}`);
+//   const previewContainer = previewSection.querySelector("#imagePreview");
 
-  if (!previewSectionId) return;
+//   if (!previewSectionId) return;
 
-  const sectionImages = uploadedImages.filter(
-    (img) => img.previewSectionId === previewSectionId
-  );
-  const imageToRemove = sectionImages[index];
+//   const sectionImages = uploadedImages.filter(
+//     (img) => img.previewSectionId === previewSectionId
+//   );
+//   const imageToRemove = sectionImages[index];
 
-  if (imageToRemove) {
-    const globalIndex = uploadedImages.indexOf(imageToRemove);
-    if (globalIndex > -1) uploadedImages.splice(globalIndex, 1);
-    previewContainer.children[index].remove();
-    Array.from(previewContainer.children).forEach((child, i) => {
-      const btn = child.querySelector(".remove-uploaded-image");
-      if (btn) btn.setAttribute("data-index", i);
-    });
-  }
+//   if (imageToRemove) {
+//     const globalIndex = uploadedImages.indexOf(imageToRemove);
+//     if (globalIndex > -1) uploadedImages.splice(globalIndex, 1);
+//     previewContainer.children[index].remove();
+//     Array.from(previewContainer.children).forEach((child, i) => {
+//       const btn = child.querySelector(".remove-uploaded-image");
+//       if (btn) btn.setAttribute("data-index", i);
+//     });
+//   }
 
-  const remainingSectionImages = uploadedImages.filter(
-    (img) => img.previewSectionId === previewSectionId
-  );
-  if (remainingSectionImages.length === 0) {
-    previewSection.classList.add("hidden");
-  }
-}
+//   const remainingSectionImages = uploadedImages.filter(
+//     (img) => img.previewSectionId === previewSectionId
+//   );
+//   if (remainingSectionImages.length === 0) {
+//     previewSection.classList.add("hidden");
+//   }
+// }
 
-export { openModal, closeModal, handleImageUpload, removeImage };
+export { openModal, closeModal };

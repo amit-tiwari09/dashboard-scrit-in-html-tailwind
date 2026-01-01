@@ -1,9 +1,6 @@
 let sidebarCollapsed = false;
 let activeSubMenuId = null;
 
-const currentPath = window.location.pathname;
-const navLinks = document.querySelectorAll("nav a[data-nav], nav > div > a");
-
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   const isLargeScreen = window.innerWidth >= 1024;
@@ -65,6 +62,9 @@ function handleMenuClick(id) {
 }
 
 function markActiveMenu() {
+  const navLinks = document.querySelectorAll("nav a[data-nav], nav > div > a");
+  const currentPath = window.location.pathname;
+
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
 
@@ -79,9 +79,10 @@ function markActiveMenu() {
         submenu.classList.remove("hidden");
         const parentButton = submenu.previousElementSibling;
         if (parentButton && parentButton.classList.contains("has-submenu")) {
+          activeSubMenuId = parentButton.id;
           parentButton.classList.add("bg-indigo-100");
-          // const icon = parentButton.querySelector(".sidebar-submenu-icon");
-          // if (icon) icon.classList.add("rotate-90");
+          const icon = parentButton.querySelector(".sidebar-submenu-icon");
+          if (icon) icon.classList.add("rotate-90");
         }
       }
     }
@@ -91,7 +92,6 @@ function markActiveMenu() {
 function toggleSubmenu(id) {
   const submenu = document.getElementById(id + "-submenu");
   const icon = document.getElementById(id + "-icon");
-
   submenu.classList.toggle("hidden");
   icon.classList.toggle("rotate-90");
 }

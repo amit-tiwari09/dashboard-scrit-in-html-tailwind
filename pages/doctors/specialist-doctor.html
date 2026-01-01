@@ -191,19 +191,19 @@
                 </button>
 
                 <div id="report-submenu" class="hidden mt-1 ml-11 space-y-1 sidebar-submenu">
-                    <a href="/pages/reports/patient-report.html"  data-nav
+                    <a href="/pages/reports/patient-report.html" data-nav
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         Patients Report
                     </a>
-                    <a href="#"  data-nav
+                    <a href="#" data-nav
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         Blood Test
                     </a>
-                    <a href="#"  data-nav
+                    <a href="#" data-nav
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         X-ray
                     </a>
-                    <a href="#"  data-nav
+                    <a href="#" data-nav
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         Full Health
                     </a>
@@ -236,7 +236,7 @@
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         App Menu
                     </a>
-                    <a href="/pages/settings/slider.html"  data-nav
+                    <a href="/pages/settings/slider.html" data-nav
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         Slider
                     </a>
@@ -397,41 +397,17 @@
         </div>
 
         <!--================= Main content=== ===============-->
-        <main class="flex-1 overflow-y-auto bg-gray-50 p-3">
+        <main class="flex-1 overflow-y-auto bg-gray-50 p-2">
             <!--============= Table ==============-->
-            <div class="space-y-6 p-3 rounded-sm shadow-md border">
+            <div class="p-3 rounded-sm shadow-md border">
                 <div class="border-b border-gray-200">
 
                     <!--=========== Filter Form ============-->
-                    <form class="p-4 md:p-6 border-b border-gray-200">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
-                            <h3 class="text-base md:text-lg font-semibold text-gray-800">Specialist Doctors</h3>
-                            <div class="flex items-center gap-3">
-                                <button type="reset"
-                                    class="text-sm text-gray-600 hover:text-gray-700 font-medium flex items-center gap-1.5 px-3 py-2 hover:bg-gray-200 rounded-lg transition-colors">
-                                    <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                                        </path>
-                                    </svg>
-                                    Clear Filters
-                                </button>
-                                <a href="#" data-targetModalId="specialist-doctor-add-modal"
-                                    class="open-modal  text-white font-semibold flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm hover:shadow-md">
-                                    <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4v16m8-8H4"></path>
-                                    </svg>
-                                    Add Specialist Doctor
-                                </a>
-                            </div>
-                        </div>
-
+                    <form class="p-2  border-b border-gray-200">
                         <div
-                            class="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200 shadow-sm">
-                            <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                            class="grid grid-cols-4  gap-3 xl:gap-0  bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200 shadow-sm">
+                            <div
+                                class="col-span-4 xl:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4">
 
                                 <!--==== Name Filter ====-->
                                 <div>
@@ -538,6 +514,32 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <!--==== Action Buttons ====-->
+                            <div class="col-span-4 xl:col-span-1  flex items-end ">
+                                <div class="flex gap-2">
+                                    <button type="reset"
+                                        class="text-sm text-gray-600 hover:text-gray-700 font-medium flex items-center gap-1.5 px-3 py-2 hover:bg-gray-200 rounded-lg transition-colors">
+                                        <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                            </path>
+                                        </svg>
+                                        Clear
+                                    </button>
+
+                                    <button type="button" data-targetModalId="specialist-doctor-add-modal"
+                                        class="open-modal text-white font-semibold flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm hover:shadow-md">
+                                        <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4v16m8-8H4"></path>
+                                        </svg>
+                                        Add New Doctor
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -564,8 +566,8 @@
                                     <div class="text-xs">1</div>
                                 </td>
                                 <td class="p-4 flex items-center space-x-2">
-                                    <img src="https://via.placeholder.com/32" alt="Doctor Photo"
-                                        class="h-8 w-8 rounded-full">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                        alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. John Doe</span>
                                 </td>
                                 <td class="p-4">
@@ -615,8 +617,8 @@
                                     <div class="text-xs">2</div>
                                 </td>
                                 <td class="p-4 flex items-center space-x-2">
-                                    <img src="https://via.placeholder.com/32" alt="Doctor Photo"
-                                        class="h-8 w-8 rounded-full">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                        alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. Jane Smith</span>
                                 </td>
                                 <td class="p-4">
@@ -666,8 +668,8 @@
                                     <div class="text-xs">3</div>
                                 </td>
                                 <td class="p-4 flex items-center space-x-2">
-                                    <img src="https://via.placeholder.com/32" alt="Doctor Photo"
-                                        class="h-8 w-8 rounded-full">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                        alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. Robert Lee</span>
                                 </td>
                                 <td class="p-4">
@@ -717,8 +719,8 @@
                                     <div class="text-xs">4</div>
                                 </td>
                                 <td class="p-4 flex items-center space-x-2">
-                                    <img src="https://via.placeholder.com/32" alt="Doctor Photo"
-                                        class="h-8 w-8 rounded-full">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                        alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. Emily Davis</span>
                                 </td>
                                 <td class="p-4">
@@ -1139,7 +1141,7 @@
     </div>
 
 
-     <div id="loader" class="loader fixed inset-0 z-50 flex items-center justify-center bg-white/60">
+    <div id="loader" class="loader fixed inset-0 z-50 flex items-center justify-center bg-white/60">
         <div class="relative flex flex-col items-center gap-8">
 
             <!--=== Animated Dots ===-->
