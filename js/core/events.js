@@ -1,5 +1,6 @@
 import { closeModal, openModal } from "./modal.js";
 import { handleMenuClick, markActiveMenu, toggleSidebar } from "./sidebar.js";
+import { toggleTabs } from "./tab.js";
 
 window.addEventListener("load", function () {
   let preloader = document.getElementById("loader");
@@ -23,6 +24,10 @@ document.addEventListener("click", function (event) {
 
   if (event.target.classList.contains("close-modal")) {
     closeModal(event.target.getAttribute("data-targetModalId"));
+  }
+
+  if (event.target.classList.contains("tab-button")) {
+    toggleTabs(event);
   }
 
   // if (event.target.classList.contains("remove-uploaded-image")) {

@@ -240,6 +240,10 @@
                         class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
                         Slider
                     </a>
+                    <a href="/pages/settings/system-user.html" data-nav
+                        class="block px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-[#EEF2FF] hover:text-gray-900 transition-colors">
+                        System User
+                    </a>
 
 
                 </div>
@@ -399,7 +403,7 @@
         <!--================= Main content=== ===============-->
         <main class="flex-1 overflow-y-auto bg-gray-50 p-2">
             <!--============= Table ==============-->
-            <div class="p-3 rounded-sm shadow-md border">
+            <div class="rounded-sm shadow-md border">
                 <div class="border-b border-gray-200">
                     <!--=========== Filter Form ============-->
                     <form class="p-2 border-b border-gray-200">
@@ -508,7 +512,7 @@
                                         Clear Filters
                                     </button>
                                     <button type="button" data-targetModalId="patient-list-add-modal"
-                                        class="open-modal  text-white font-semibold flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm hover:shadow-md">
+                                        class="open-modal text-white font-semibold flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm hover:shadow-md">
                                         <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -527,6 +531,8 @@
                             <tr class="border-b transition-colors ">
                                 <th class="h-12 px-4 text-left font-semibold">Doctor Id</th>
                                 <th class="h-12 px-4 text-left font-semibold">Name</th>
+                                <th class="h-12 px-4 text-left font-semibold">Phone</th>
+                                <th class="h-12 px-4 text-left font-semibold">Password</th>
                                 <th class="h-12 px-4 text-left font-semibold">Department</th>
                                 <th class="h-12 px-4 text-left font-semibold">Doctor Type/Role</th>
                                 <th class="h-12 px-4 text-left font-semibold">Experience</th>
@@ -545,6 +551,12 @@
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
                                         alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. John Doe</span>
+                                </td>
+                                <td class="p-4">
+                                    +97798565632231
+                                </td>
+                                <td class="p-4">
+                                    ****33434
                                 </td>
                                 <td class="p-4">
                                     <span
@@ -597,6 +609,12 @@
                                     <span>Dr. Jane Smith</span>
                                 </td>
                                 <td class="p-4">
+                                    +97798565632231
+                                </td>
+                                <td class="p-4">
+                                    ****33434
+                                </td>
+                                <td class="p-4">
                                     <span
                                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                                         <span class="h-1.5 w-1.5 rounded-full mr-2 bg-blue-600"></span>
@@ -645,6 +663,12 @@
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
                                         alt="Doctor Photo" class="h-8 w-8 rounded-full">
                                     <span>Dr. Robert Lee</span>
+                                </td>
+                                <td class="p-4">
+                                    +97798565632231
+                                </td>
+                                <td class="p-4">
+                                    ****33434
                                 </td>
                                 <td class="p-4">
                                     <span
@@ -697,6 +721,12 @@
                                     <span>Dr. Emily Davis</span>
                                 </td>
                                 <td class="p-4">
+                                    +97798565632231
+                                </td>
+                                <td class="p-4">
+                                    ****33434
+                                </td>
+                                <td class="p-4">
                                     <span
                                         class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
                                         <span class="h-1.5 w-1.5 rounded-full mr-2 bg-red-600"></span>
@@ -740,7 +770,7 @@
                 </div>
 
                 <!--============= Pagination ==============-->
-                <div class="rounded-xl p-6">
+                <div class="rounded-xl p-3">
                     <div class="flex items-center justify-between">
                         <div class="text-sm text-gray-600">
                             Showing <span class="font-semibold text-gray-900">1-12</span> of <span
