@@ -67,7 +67,6 @@ function markActiveMenu() {
 
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
-
     if (
       currentPath.endsWith(href) ||
       currentPath.includes(href.replace(/^\//, ""))

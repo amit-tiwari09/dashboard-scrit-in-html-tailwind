@@ -1,65 +1,103 @@
 function toggleTabs(event) {
-  let tabcontentId = event.target.getAttribute("data-targetId");
-  const tabButons = document.querySelectorAll(".tab-button");
+  const target = event.target;
+
+  let tabContentId = target.getAttribute("data-targetId");
+
+  const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
   const parentTabButtons = document.querySelectorAll(".parent-tab-button");
 
-  tabButons.forEach((tab) => {
-    tab.classList.remove("bg-blue-100", "text-black");
-  });
+  resetTabButtons(tabButtons);
+  hideAllTabContents(tabContents);
+  resetParentTabs(parentTabButtons);
 
-  tabContents.forEach((content) => {
-    content.classList.add("hidden");
-  });
-
-  parentTabButtons.forEach((btn) => {
-    btn.classList.remove("bg-blue-600");
-    btn.classList.remove("text-white");
-
-    btn.classList.add("bg-blue-100", "text-blue-700");
-  });
-
-  if (event.target.classList.contains("parent-tab-button")) {
-    event.target.classList.add("bg-blue-600");
-    event.target.classList.add("text-white");
-
-    event.target.classList.remove("bg-blue-100", "text-blue-700");
+  if (isParentTab(target)) {
+    activateParentTab(target);
   } else {
-    if (
-      event.target.classList.contains("tab-button") &&
-      event.target.classList.contains("has-parent-tab")
-    ) {
-      let parentTabID = event.target.getAttribute("data-parentTabId");
-
-      tabcontentId = parentTabID;
-      document
-        .querySelector(`[data-targetId="${parentTabID}"]`)
-        .classList.add("bg-blue-100", "text-black");
-    } else {
-      event.target.classList.add("bg-blue-100", "text-black");
-
-      if (event.target.hasAttribute("data-parentTabBtnId")) {
-        let parentTabBtnId = event.target.getAttribute("data-parentTabBtnId");
-        document
-          .getElementById(`${parentTabBtnId}`)
-          .classList.add("bg-blue-100", "text-black");
-      }
-
-      if (event.target.classList.contains("add-slide-btn")) {
-        const slidePageCancelBtn = document.querySelector(
-          ".cancel-slide-addition"
-        );
-
-        slidePageCancelBtn.classList.add("has-parent-tab");
-        slidePageCancelBtn.setAttribute(
-          "data-parentTabId",
-          event.target.getAttribute("data-parentTabId")
-        );
-      }
-    }
+    handleChildOrNormalTab(target, parentTabButtons);
+    tabContentId = resolveParentTabContent(target, tabContentId);
   }
 
-  document.getElementById(`${tabcontentId}`).classList.remove("hidden");
+  showTabContent(tabContentId);
+}
+
+/* ================= Helper Functions ================= */
+
+function resetTabButtons(buttons) {
+  buttons.forEach((btn) => btn.classList.remove("bg-blue-100", "text-black"));
+}
+
+function hideAllTabContents(contents) {
+  contents.forEach((content) => content.classList.add("hidden"));
+}
+
+function resetParentTabs(parentTabs) {
+  parentTabs.forEach((btn) => {
+    btn.classList.remove("bg-blue-600");
+    btn.classList.add("bg-blue-500", "text-white");
+  });
+}
+
+function isParentTab(target) {
+  return target.classList.contains("parent-tab-button");
+}
+
+function activateParentTab(target) {
+  target.classList.add("bg-blue-600", "text-white");
+  target.classList.remove("bg-blue-100", "text-blue-700");
+}
+
+function handleChildOrNormalTab(target) {
+  target.classList.add("bg-blue-100", "text-black");
+
+  if (target.hasAttribute("data-parentTabBtnId")) {
+    const parentBtnId = target.getAttribute("data-parentTabBtnId");
+    document
+      .getElementById(parentBtnId)
+      .classList.add("bg-blue-100", "text-black");
+  }
+
+  if (target.classList.contains("add-slide-btn")) {
+    setupCancelSlideButton(target);
+  }
+  if (target.classList.contains("edit-slide-btn")) {
+    setupCancelSlideButton(target, "edit");
+  }
+}
+
+function resolveParentTabContent(target, tabContentId) {
+  if (
+    target.classList.contains("tab-button") &&
+    target.classList.contains("has-parent-tab")
+  ) {
+    const parentTabId = target.getAttribute("data-parentTabId");
+
+    document
+      .querySelector(`[data-targetId="${parentTabId}"]`)
+      .classList.add("bg-blue-100", "text-black");
+
+    return parentTabId;
+  }
+
+  return tabContentId;
+}
+
+function setupCancelSlideButton(target, cancelBtnFor = "add") {
+  let cancelBtn = document.querySelector(".cancel-slide-addition");
+
+  if (cancelBtnFor != "add") {
+    cancelBtn = document.querySelector(".cancel-slide-edition");
+  }
+
+  cancelBtn.classList.add("has-parent-tab");
+  cancelBtn.setAttribute(
+    "data-parentTabId",
+    target.getAttribute("data-parentTabId")
+  );
+}
+
+function showTabContent(tabContentId) {
+  document.getElementById(tabContentId).classList.remove("hidden");
 }
 
 export { toggleTabs };

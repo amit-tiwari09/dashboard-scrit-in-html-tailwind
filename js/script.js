@@ -1,5 +1,1 @@
 import "./core/events.js";
-
-
-
-

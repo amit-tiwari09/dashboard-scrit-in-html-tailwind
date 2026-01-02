@@ -7,7 +7,6 @@ function openModal(modalBtnId) {
 }
 
 function closeModal(modalBtnId) {
-
   const modal = document.getElementById(`${modalBtnId}`);
   modal.classList.remove("modal-enter");
   modal.classList.add("modal-exit");
